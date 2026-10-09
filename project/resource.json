@@ -1,0 +1,58 @@
+[
+    {
+        "id": "R001",
+        "name": "Laptop",
+        "category": "Electronics",
+        "total": 8,
+        "available": 8
+    },
+    {
+        "id": "R002",
+        "name": "Keyboard",
+        "category": "Accessories",
+        "total": 1,
+        "available": 1
+    },
+    {
+        "id": "R003",
+        "name": "Headset",
+        "category": "Accessories",
+        "total": 3,
+        "available": 3
+    },
+    {
+        "id": "R004",
+        "name": "buiscuits",
+        "category": "snacks",
+        "total": 7,
+        "available": 0
+    },
+    {
+        "id": "R005",
+        "name": "Jam",
+        "category": "sweeteners",
+        "total": 18,
+        "available": 18
+    },
+    {
+        "id": "R006",
+        "name": "Knife",
+        "category": "cutlery",
+        "total": 10,
+        "available": 10
+    },
+    {
+        "id": "R007",
+        "name": "earpiece",
+        "category": "assecories",
+        "total": 7,
+        "available": 7
+    },
+    {
+        "id": "R008",
+        "name": "Beans",
+        "category": "food_stuff",
+        "total": 20,
+        "available": 20
+    }
+]
