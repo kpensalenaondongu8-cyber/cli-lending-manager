@@ -74,7 +74,8 @@ def borrow(fellow_id, resource_id, quantity):
     print(f"User at ID {fellow_id} borrowed {quantity} '{matched['name']}'. Available {matched['name']} = {matched['available']}")
 
 
-def Returns(resource_id, fellow_id, quantity):
+
+def Returns(resource_id, fellow_id, quantity, data, borrowed_data, fellows):
 
     match = None
     for item in data:
@@ -83,36 +84,23 @@ def Returns(resource_id, fellow_id, quantity):
             break 
 
     if not match:
-        return "resource_id does'nt exists"
-    if quantity <= 0 or quantity > borrowed_data['quantity']:
-            return f"the returns is either higher than what you borrowed or negative, you borrowed{borrowed_data['quantity']} and you returning'{quantity}'."
+        return "resource_id doesn't exist"
     
     if fellow_id not in fellows:
-        return f"id: {fellow_id} doesnt exists"
+        return f"id: {fellow_id} doesn't exist"
+        
+    if quantity <= 0 or quantity > borrowed_data['quantity']:
+        return f"The return is either higher than what you borrowed or negative. You borrowed {borrowed_data['quantity']} and you are returning {quantity}."
     
-    for all in data:
-            match['quantity'] -= quantity
-            all['available'] += quantity
+    match['quantity'] -= quantity   
+    match['available'] += quantity  
+    borrowed_data['quantity'] -= quantity 
 
     with open("resource.json", "w") as file:
-        json.dump(match, file, indent=4)
+        json.dump(data, file, indent=4) 
 
     with open("borrowed.json", "w") as file:
-        json.dump(all, file, indent=4)  
-    print(f"user at id: {fellow_id} returned {resource_id}, {quantity}")              
-   
+        json.dump(borrowed_data, file, indent=4)  
 
-
-
-
-
-
-
-    
-
-
-    
-
-    
-
-
+    print(f"user at id: {fellow_id} returned {resource_id}, {quantity}")
+    return "Success"
